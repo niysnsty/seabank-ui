@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//app entry point
 void main() {
   runApp(const BRI());
 }
@@ -70,8 +69,8 @@ class HomePage extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(width: 160,
-                    child: Text("Account No: 1512 7845 2363",
+                    SizedBox(width: 165,
+                    child: Text("No. Rekening: 1512 7845 2363",
                         style: const TextStyle(
                           color: Colors.black54,
                           fontSize: 12,                      
@@ -202,7 +201,7 @@ Widget menuSection() {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              menuItem(Icons.swap_horiz, "Transfer", isNew: true),
+              menuItem(Icons.swap_horiz, "Transfer"),
               menuItem(Icons.receipt, "Bills"),
               menuItem(Icons.account_balance_wallet, "E-Wallet"),
               menuItem(Icons.people, "Referral"),
@@ -224,26 +223,13 @@ Widget menuSection() {
     ),      
   );
 }
-Widget menuItem(IconData icon, String title, {bool isNew = false}) {
+Widget menuItem(IconData icon, String title) { 
   return Column(
     children: [
       Stack(
         children: [
           CircleAvatar( radius: 22, backgroundColor: Color(0xffFFF3E0),child: Icon(icon, color: Colors.orange),
           ),
-
-          if (isNew)
-            Positioned(
-              right: 0,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 4),
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: Text("New", style: TextStyle(fontSize: 8, color: Colors.white)),
-              ),
-            )
         ],
       ),
       SizedBox(height: 6),
@@ -253,14 +239,78 @@ Widget menuItem(IconData icon, String title, {bool isNew = false}) {
 }
 //Widget pocketSection() {}
 Widget bottomNav() {
-  return BottomNavigationBar(
-    selectedItemColor: Colors.orange,
-    unselectedItemColor: Colors.grey,
-    items: [
-      BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-      BottomNavigationBarItem(icon: Icon(Icons.swap_horiz), label: "Pay"),
-      BottomNavigationBarItem(icon: Icon(Icons.savings), label: "Deposit"),
-      BottomNavigationBarItem(icon: Icon(Icons.person), label: "Me"),
+  return Stack(
+    alignment: Alignment.bottomCenter,
+    children: [
+      Container(
+        height: 70,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 8,
+              color: Colors.black12,
+            )
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            navItem(Icons.home, "Beranda", true),
+            navItem(Icons.swap_horiz, "Bayar/Transfer", false),
+            SizedBox(width: 60), // Space for the floating action button
+            navItem(Icons.monetization_on, "Deposito", false),
+            navItem(Icons.person, "Saya", false),
+          ],
+        ),
+      ),
+      Positioned(
+        bottom: 25,
+        child: Container(
+          width: 60,
+          height: 40,
+          decoration: BoxDecoration(
+            color: Colors.orange,
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 8,
+                color: Colors.black26,
+              )
+            ],
+          ),
+          child: Icon(Icons.qr_code, color: Colors.white),
+        ),
+      )
     ],
   );
+}
+class navItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final bool isActive;
+
+  const navItem(this.icon, this.title, this.isActive, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 22,
+          color: isActive ? Colors.orange : Colors.grey,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 10,
+            color: isActive ? Colors.orange : Colors.grey,
+          ),
+        )
+      ],
+    );
+  }
 }
