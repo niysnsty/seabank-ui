@@ -123,11 +123,11 @@ Widget saldoSection() {
               ),
             ],
           ),
-          Text("Total Saldo", style: TextStyle(color: Colors.white70, fontSize: 14)),
+          Text("Total Saldo", style: TextStyle(color: Colors.white, fontSize: 14)),
           SizedBox(height: 5),
           Row(
             children: [
-              Text("Rp", style: TextStyle(color: Colors.white70, fontSize: 16)),
+              Text("Rp", style: TextStyle(color: Colors.white, fontSize: 16)),
               Text(" 1.000.000", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
             ],
           ),
@@ -142,9 +142,9 @@ Widget saldoSection() {
                 children: [
                   Row(
                     children: [
-                      Text("Tabungan", style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      Text("Tabungan", style: TextStyle(color: Colors.white, fontSize: 12)),
                       SizedBox(width: 3),
-                      Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 12)
+                      Icon(Icons.arrow_forward_ios, color: Colors.white, size: 12)
                     ],
                   ),
                   SizedBox(height: 5),
@@ -161,9 +161,9 @@ Widget saldoSection() {
                 children: [
                   Row(
                     children: [
-                      Text("Deposito", style: TextStyle(color: Colors.white70, fontSize: 12)),
+                      Text("Deposito", style: TextStyle(color: Colors.white, fontSize: 12)),
                       SizedBox(width: 3),
-                      Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 12)
+                      Icon(Icons.arrow_forward_ios, color: Colors.white, size: 12)
                     ],
                   ),
                   SizedBox(height: 5),
