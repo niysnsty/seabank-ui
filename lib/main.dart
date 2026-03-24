@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
             SliverList(delegate: SliverChildListDelegate([
               saldoSection(),
               menuSection(),
-              //pocketSection(),
+              pocketSection(),
             ]),
           ),
         ]
@@ -110,7 +110,7 @@ Widget saldoSection() {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(230, 224, 2, 2),
+                  color: const Color.fromARGB(230, 207, 3, 3),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
@@ -237,7 +237,175 @@ Widget menuItem(IconData icon, String title) {
     ],
   );
 }
-//Widget pocketSection() {}
+Widget pocketSection() {
+  return Padding(
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("E-Wallet Terhubung", style: TextStyle(fontWeight: FontWeight.bold)),
+              SizedBox(width: 10),
+            ],
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+              color: Colors.white,          
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 150,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(12),                  
+                ),
+                child: Row(
+                  children: [
+                    CircleAvatar(radius: 14, backgroundImage: NetworkImage("https://radarbanyumas.disway.id/upload/88da84b9d3cabeeb4b1541a9b0ae3ee8.jpg")
+                    ),
+                    SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("ShopeePay", style: TextStyle(fontSize: 12)),
+                        Text("Rp. 6.231", style: TextStyle(fontSize: 12)),
+                      ],
+                    ),
+                  ],
+                ), 
+              ),
+              Container(
+                width: 150,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    CircleAvatar(radius: 14, backgroundImage: NetworkImage("https://blob.cloudcomputing.id/images/a618a1e5-6218-4a40-bb86-a064bfb50469/logo-ovo-l-min.jpg"),
+                    ),
+                    SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("OVO", style: TextStyle(fontSize: 12)),
+                        Text("Hubungkan", style: TextStyle(fontSize: 12, color: Colors.orange)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 16),
+        Container(
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Riwayat Transaksi", style: TextStyle(fontWeight: FontWeight.bold)),
+                  Icon(Icons.arrow_forward_ios, size: 14,)
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 16, backgroundColor: Colors.orange,
+                        child: Icon(Icons.home, size: 16, color: Colors.white),
+                      ),
+                      SizedBox(width: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("MURNIATI", style: TextStyle(fontSize: 12)),
+                          Text("Transfer\n21 Mar 2026, 15:54", style: TextStyle(fontSize: 10, color: Colors.grey),)
+                        ],
+                      ),
+                    ],
+                  ),
+                  Text("+Rp 66.000", style: TextStyle(color: Colors.green)),
+                ],
+              ),
+              Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 16, backgroundColor: Colors.blue,
+                        child: Icon(Icons.monetization_on, size: 16, color: Colors.white),
+                      ),
+                      SizedBox(width: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Bunga Tabungan", style: TextStyle(fontSize: 12)),
+                          Text("Bunga\n21 Mar 2026, 01:57", style: TextStyle(fontSize: 10, color: Colors.grey),)
+                        ],
+                      ),
+                    ],
+                  ),
+                  Text("+Rp 93", style: TextStyle(color: Colors.green)),
+                ],
+              ),
+              Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 16, backgroundColor: Colors.blue,
+                        child: Icon(Icons.monetization_on, size: 16, color: Colors.white),
+                      ),
+                      SizedBox(width: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Bunga Tabungan", style: TextStyle(fontSize: 12)),
+                          Text("Bunga\n20 Mar 2026, 00:56", style: TextStyle(fontSize: 10, color: Colors.grey),)
+                        ],
+                      ),
+                    ],
+                  ),
+                  Text("+Rp 93", style: TextStyle(color: Colors.green)),
+                ],
+              ),
+             SizedBox(height: 10),
+             Text("Transaksi Lainnya  >", style: TextStyle(color: Colors.grey),)
+            ],
+          ),
+        ),
+      ],
+    ),
+  );  
+}
 Widget bottomNav() {
   return Stack(
     alignment: Alignment.bottomCenter,
