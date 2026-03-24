@@ -274,13 +274,13 @@ Widget pocketSection() {
                 ),
                 child: Row(
                   children: [
-                    CircleAvatar(radius: 14, backgroundImage: NetworkImage("https://radarbanyumas.disway.id/upload/88da84b9d3cabeeb4b1541a9b0ae3ee8.jpg")
+                    CircleAvatar(radius: 16, backgroundImage: NetworkImage("https://radarbanyumas.disway.id/upload/88da84b9d3cabeeb4b1541a9b0ae3ee8.jpg")
                     ),
                     SizedBox(width: 8),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("ShopeePay", style: TextStyle(fontSize: 12)),
+                        Text("ShopeePay  >", style: TextStyle(fontSize: 12)),
                         Text("Rp. 6.231", style: TextStyle(fontSize: 12)),
                       ],
                     ),
@@ -296,14 +296,14 @@ Widget pocketSection() {
                 ),
                 child: Row(
                   children: [
-                    CircleAvatar(radius: 14, backgroundImage: NetworkImage("https://blob.cloudcomputing.id/images/a618a1e5-6218-4a40-bb86-a064bfb50469/logo-ovo-l-min.jpg"),
+                    CircleAvatar(radius: 16, backgroundImage: NetworkImage("https://blob.cloudcomputing.id/images/a618a1e5-6218-4a40-bb86-a064bfb50469/logo-ovo-l-min.jpg"),
                     ),
                     SizedBox(width: 8),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("OVO", style: TextStyle(fontSize: 12)),
-                        Text("Hubungkan", style: TextStyle(fontSize: 12, color: Colors.orange)),
+                        Text("Hubungkan  >", style: TextStyle(fontSize: 12, color: Colors.orange)),
                       ],
                     ),
                   ],
